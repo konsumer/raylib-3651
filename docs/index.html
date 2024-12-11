@@ -4,32 +4,29 @@
     <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/10213618" />
     <style>
     body {
-      display:flex;
-      align-itens: center;
-      justify-content: center;
-      margin:0;
+      font-family: sans-serif;
       color: #fff;
       background: #000;
-      height: 100vh;
-    }
-    @media (orientation: landscape) {
-      body {
-        flex-direction: row;
-      }
-    }
-
-    @media (orientation: portrait) {
-      body {
-        flex-direction: column;
-      }
     }
     </style>
   </head>
   <body>
-    <canvas></canvas>
+    <h2>GLFW</h2>
+    <canvas width="320" height="240"></canvas>
+
+    <h2>SDL</h2>
+    <canvas width="320" height="240"></canvas>
+
+    <h2>Raylib GLFW</h2>
+    <canvas width="320" height="240"></canvas>
   </body>
   <script type="module">
   import setupGlfw from './jstest_glfw.mjs'
+  import setupSdl from './jstest_sdl.mjs'
+  import setupRaylibGlfw from './jstest_raylib_glfw.mjs'
+
   await setupGlfw({canvas: document.getElementsByTagName('canvas')[0]})
+  await setupSdl({canvas: document.getElementsByTagName('canvas')[1]})
+  await setupRaylibGlfw({canvas: document.getElementsByTagName('canvas')[2]})
   </script>
 </html>

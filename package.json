@@ -3,17 +3,17 @@
     "start": "npx -y live-server docs",
     "prestart": "npm run build:web",
 
-    "build:web": "rm -rf wbuild && emcmake cmake -G Ninja -B build && cmake --build build --target jstest_glfw --target jstest_sdl --target jstest_raylib_glfw --target jstest_raylib_sdl",
-    "build:native": "rm -rf build && cmake -G Ninja -B build && cmake --build build --target jstest_glfw --target jstest_sdl --target jstest_raylib_glfw --target jstest_raylib_sdl",
+    "build:web": "rm -rf wbuild && emcmake cmake -G Ninja -B build -DPLATFORM=Web && cmake --build build --target jstest_glfw --target jstest_sdl --target jstest_raylib_glfw",
+    "build:native": "rm -rf build && cmake -G Ninja -B build && cmake --build build --target jstest_glfw --target jstest_sdl --target jstest_raylib_glfw && npm run build:native-raylib-sdl",
 
-    "build:web-glfw": "emcmake cmake -G Ninja -B wbuild && cmake --build wbuild --target jstest_glfw",
-    "build:web-sdl": "emcmake cmake -G Ninja -B wbuild && cmake --build wbuild --target jstest_sdl",
-    "build:web-raylib-glfw": "emcmake cmake -G Ninja -B wbuild && cmake --build wbuild --target jstest_raylib_glfw",
-    "build:web-raylib-sdl": "emcmake cmake -G Ninja -B wbuild && cmake --build wbuild --target jstest_raylib_sdl",
+    "build:web-glfw": "emcmake cmake -G Ninja -B wbuild -DPLATFORM=Web && cmake --build wbuild --target jstest_glfw",
+    "build:web-sdl": "emcmake cmake -G Ninja -B wbuild -DPLATFORM=Web && cmake --build wbuild --target jstest_sdl",
+    "build:web-raylib-glfw": "emcmake cmake -G Ninja -B wbuild -DPLATFORM=Web && cmake --build wbuild --target jstest_raylib_glfw",
+    "build:web-raylib-sdl": "emcmake cmake -G Ninja -B wbuild -DPLATFORM=Web && cmake --build wbuild --target jstest_raylib_sdl",
 
     "build:native-glfw": "cmake -G Ninja -B build && cmake --build build --target jstest_glfw",
     "build:native-sdl": "cmake -G Ninja -B build && cmake --build build --target jstest_sdl",
-    "build:native-raylib-glfw": "cmake -G Ninja -B build && cmake --build build --target jstest_raylib_glfw",
-    "build:native-raylib-sdl": "cmake -G Ninja -B build && cmake --build build --target jstest_raylib_sdl"
+    "build:native-raylib-glfw": "cmake -G Ninja -B build -DPLATFORM=Desktop && cmake --build build --target jstest_raylib_glfw",
+    "build:native-raylib-sdl": "cmake -G Ninja -B build -DPLATFORM=SDL && cmake --build build --target jstest_raylib_sdl"
   }
 }

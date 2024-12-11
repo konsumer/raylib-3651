@@ -25,10 +25,14 @@ npm run build:native-raylib-glfw
 npm run build:native-raylib-sdl
 ```
 
+I couldn't figure out how to build `web-raylib-sdl`, but `web-sdl`/`web-raylib-glfw` should be an ok indicator of functionality of the backend.
+
 ### results
 
-- [Plain Web](https://hardwaretester.com/gamepad) and [Raylib Web](https://www.raylib.com/examples/core/loader.html?name=core_input_gamepad) work fine.
-- [Web](http://konsumer.js.org/raylib-3651/) has working `web-glfw`/`web-sdl`/`web-raylib-glfw`/`web-raylib-sdl`
+- [Plain Web](https://hardwaretester.com/gamepad) and [Raylib Web](https://www.raylib.com/examples/core/loader.html?name=core_input_gamepad) works fine.
+- [Web](http://konsumer.js.org/raylib-3651/) has working `web-glfw`/`web-sdl`/`web-raylib-glfw`
+- `native-raylib-sdl`: works fine
+- `native-sdl`: works fine
+
 - `native-glfw` works for 4 seconds after initially pairing, but then stops reading buttons
-- `native-sdl`: TBD
-- `web-raylib-glfw`/`web-raylib-sdl`: TBD
+- `native-raylib-glfw`: no response from buttns, but device-name shows
