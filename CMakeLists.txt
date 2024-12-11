@@ -20,7 +20,7 @@ set(CMAKE_COLOR_DIAGNOSTICS ON)
 function(SETUP_GLFW_TARGET name)
   if(EMSCRIPTEN)
     set_target_properties(${name} PROPERTIES
-      LINK_FLAGS "-Oz -sUSE_GLFW=3 -sSINGLE_FILE"
+      LINK_FLAGS "-Oz -sSINGLE_FILE -sUSE_GLFW=3"
       RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/docs/"
       SUFFIX ".mjs"
     )

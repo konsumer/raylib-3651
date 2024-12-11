@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>GL is cool!</title>
+    <title>jstest</title>
     <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/10213618" />
     <style>
     body {
@@ -29,7 +29,7 @@
     <canvas></canvas>
   </body>
   <script type="module">
-  import setup from './example.mjs'
-  await setup({canvas: document.getElementsByTagName('canvas')[0]})
+  import setupGlfw from './jstest_glfw.mjs'
+  await setupGlfw({canvas: document.getElementsByTagName('canvas')[0]})
   </script>
 </html>

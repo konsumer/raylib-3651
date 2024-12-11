@@ -10,14 +10,25 @@ You will need cmake & ninja installed.
 # start local webserver for SDL, GLFW, raylib-sdl, raylib-glfw
 npm start
 
-# build
+# build native demos
+npm run build:native
+
+# build seperate demos, if you want
+npm run build:web-glfw
+npm run build:web-sdl
+npm run build:web-raylib-glfw
+npm run build:web-raylib-sdl
+
+npm run build:native-glfw
+npm run build:native-sdl
+npm run build:native-raylib-glfw
+npm run build:native-raylib-sdl
 ```
 
 ### results
 
-- [Normal Web](https://hardwaretester.com/gamepad) and [Raylib Web](https://www.raylib.com/examples/core/loader.html?name=core_input_gamepad) work fine.
-- [Web GLFW](http://konsumer.js.org/raylib-3651/) and [Web SDL](http://konsumer.js.org/raylib-3651/sdl.html) works fine
-- Bare GLFW works for 4 seconds after initially pairing, but then stops reading buttons
-- Bare SDL2: TBD
-- Raylib with `PLATFORM_DESKTOP_GLFW` - same problem as GLFW
-- Raylib with `PLATFORM_DESKTOP_SDL`: TBD
+- [Plain Web](https://hardwaretester.com/gamepad) and [Raylib Web](https://www.raylib.com/examples/core/loader.html?name=core_input_gamepad) work fine.
+- [Web](http://konsumer.js.org/raylib-3651/) has working `web-glfw`/`web-sdl`/`web-raylib-glfw`/`web-raylib-sdl`
+- `native-glfw` works for 4 seconds after initially pairing, but then stops reading buttons
+- `native-sdl`: TBD
+- `web-raylib-glfw`/`web-raylib-sdl`: TBD
