@@ -4,10 +4,9 @@ Essentially, on 1 controller I have ([PXN-P50S](https://www.e-pxn.com/products/g
 
 Here are the things I test here:
 
-- plain glfw - does not register buttons, but picks up name, fine with PS5 controller. weirdly workds correctly for 4 seconds after paring.
+- plain glfw - does not register buttons, but picks up name, fine with PS5 controller. weirdly works correctly for 4 seconds after paring.
+- raylib-glfw - same problems
 - raylib-sdl - works fine
-- raylib-glfw - does not register buttons, but picks up name, fine with PS5 controller
-
 
 ### building
 

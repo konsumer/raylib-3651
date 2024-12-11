@@ -53,7 +53,7 @@ int main() {
 
   glfwSetJoystickCallback(joystick_connect_callback);
 
-  window = glfwCreateWindow(320, 240, "gamepad tester", NULL, NULL);
+  window = glfwCreateWindow(320, 240, "glfw joytest", NULL, NULL);
   if (!window) {
     fprintf(stderr, "Could not create window.\n");
     glfwTerminate();

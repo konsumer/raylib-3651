@@ -1,7 +1,7 @@
 #include "raylib.h"
 
 int main(void) {
-  InitWindow(320, 240, "joytest");
+  InitWindow(320, 240, "rasylib joytest");
   SetTargetFPS(60);
 
   while (!WindowShouldClose()) {
