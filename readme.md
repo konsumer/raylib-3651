@@ -21,7 +21,7 @@ cmake --build build --target jstest_glfw
 cmake -G Ninja -B build -DPLATFORM=Desktop
 cmake --build build --target jstest_raylib_glfw
 
-# build jstest_raylib_sdl in root: a raylib GLFW test
+# build jstest_raylib_sdl in root: a raylib SDL test
 cmake -G Ninja -B build -DPLATFORM=SDL
 cmake --build build --target jstest_raylib_sdl
 ```
