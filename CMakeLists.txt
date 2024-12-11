@@ -21,4 +21,4 @@ set_property(GLOBAL PROPERTY ALLOW_DUPLICATE_CUSTOM_TARGETS 1)
 
 add_subdirectory(src/glfw)
 add_subdirectory(src/raylib)
-add_subdirectory(src/sdl)
+

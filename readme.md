@@ -2,37 +2,27 @@ This is mean to test [raylib#3651](https://github.com/raysan5/raylib/issues/3651
 
 Essentially, on 1 controller I have ([PXN-P50S](https://www.e-pxn.com/products/gaming-controller/pxn-p50s)), on Mac Sonoma (on an M1) it does not read buttons. All these targets work fine with an official PS5 controller.
 
+Here are the things I test here:
+
+- plain glfw - does not register buttons, but picks up name, fine with PS5 controller. weirdly workds correctly for 4 seconds after paring.
+- raylib-sdl - works fine
+- raylib-glfw - does not register buttons, but picks up name, fine with PS5 controller
+
+
 ### building
 
-You will need cmake & ninja installed.
+You will need cmake & ninja installed (mac: `brew install cmake ninja`)
 
 ```bash
-# start local webserver for SDL, GLFW, raylib-sdl, raylib-glfw
-npm start
+# build jstest_glfw in root: a plain GLFW test
+cmake -G Ninja -B build
+cmake --build build --target jstest_glfw
 
-# build native demos
-npm run build:native
+# build jstest_raylib_glfw in root: a raylib GLFW test
+cmake -G Ninja -B build -DPLATFORM=Desktop
+cmake --build build --target jstest_raylib_glfw
 
-# build seperate demos, if you want
-npm run build:web-glfw
-npm run build:web-sdl
-npm run build:web-raylib-glfw
-npm run build:web-raylib-sdl
-
-npm run build:native-glfw
-npm run build:native-sdl
-npm run build:native-raylib-glfw
-npm run build:native-raylib-sdl
+# build jstest_raylib_sdl in root: a raylib GLFW test
+cmake -G Ninja -B build -DPLATFORM=SDL
+cmake --build build --target jstest_raylib_sdl
 ```
-
-I couldn't figure out how to build `web-raylib-sdl`, but `web-sdl`/`web-raylib-glfw` should be an ok indicator of functionality of the backend.
-
-### results
-
-- [Plain Web](https://hardwaretester.com/gamepad) and [Raylib Web](https://www.raylib.com/examples/core/loader.html?name=core_input_gamepad) works fine.
-- [Web](http://konsumer.js.org/raylib-3651/) has working `web-glfw`/`web-sdl`/`web-raylib-glfw`
-- `native-raylib-sdl`: works fine
-- `native-sdl`: works fine
-
-- `native-glfw` works for 4 seconds after initially pairing, but then stops reading buttons
-- `native-raylib-glfw`: no response from buttns, but device-name shows
