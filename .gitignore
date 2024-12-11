@@ -1,0 +1,12 @@
+build/
+wbuild/
+.DS_Store
+
+/jstest_glfw
+/jstest_sdl
+/jstest_raylib_glfw
+/jstest_raylib_sdl
+/jstest_glfw.exe
+/jstest_sdl.exe
+/jstest_raylib_glfw.exe
+/jstest_raylib_sdl.exe
