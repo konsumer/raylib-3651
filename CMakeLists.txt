@@ -14,9 +14,8 @@ endif()
 # enable colors for ninja
 set(CMAKE_COLOR_DIAGNOSTICS ON)
 
-# set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Debug)
 
-add_compile_definitions(-DGL_SILENCE_DEPRECATION)
 set_property(GLOBAL PROPERTY ALLOW_DUPLICATE_CUSTOM_TARGETS 1)
 
 add_subdirectory(src/glfw)
