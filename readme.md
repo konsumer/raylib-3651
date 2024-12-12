@@ -8,6 +8,8 @@ Here are the things I test here:
 - raylib-glfw - same problems
 - raylib-sdl - works fine
 
+I also included a [little tester](https://github.com/konsumer/raylib-3651/blob/main/src/sdl2-joystick.c) to get the SDL GamepadDB ID, with instructions at top of file for building.
+
 ### building
 
 You will need cmake & ninja installed (mac: `brew install cmake ninja`)
