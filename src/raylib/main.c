@@ -4,6 +4,12 @@ int main(void) {
   InitWindow(320, 240, "rasylib joytest");
   SetTargetFPS(60);
 
+  // This map came from SDL
+  const char** mappings = {"0300d71f7e0500000920000001006803,DK Switch Controller,a:b0,b:b1,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b9,leftshoulder:b4,leftstick:b6,lefttrigger:a2,leftx:a0,lefty:a1,rightshoulder:b5,rightstick:b7,righttrigger:a5,rightx:a3,righty:a4,start:b10,x:b2,y:b3,platform:Mac OS X,"};
+  int mapstatus = SetGamepadMappings(mappings);
+  TraceLog(LOG_INFO, "JS: mapping: %d", mapstatus);
+
+
   while (!WindowShouldClose()) {
     BeginDrawing();
     ClearBackground(BLACK);

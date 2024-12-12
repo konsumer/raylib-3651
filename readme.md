@@ -13,15 +13,12 @@ Here are the things I test here:
 You will need cmake & ninja installed (mac: `brew install cmake ninja`)
 
 ```bash
-# build jstest_glfw in root: a plain GLFW test
-cmake -G Ninja -B build
-cmake --build build --target jstest_glfw
+# build jstest_glfw: a plain GLFW test
+cmake -G Ninja -B build && cmake --build build --target jstest_glfw && jstest_glfw
 
-# build jstest_raylib_glfw in root: a raylib GLFW test
-cmake -G Ninja -B build -DPLATFORM=Desktop
-cmake --build build --target jstest_raylib_glfw
+# build jstest_raylib_glfw: a raylib GLFW test
+cmake -G Ninja -B build -DPLATFORM=Desktop && cmake --build build --target jstest_raylib_glfw && ./jstest_raylib_glfw
 
-# build jstest_raylib_sdl in root: a raylib SDL test
-cmake -G Ninja -B build -DPLATFORM=SDL
-cmake --build build --target jstest_raylib_sdl
+# build jstest_raylib_sdl: a raylib SDL test
+cmake -G Ninja -B build -DPLATFORM=SDL && cmake --build build --target jstest_raylib_sdl && ./jstest_raylib_sdl
 ```
